@@ -4,21 +4,28 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Personne1 {
-	
-     private String nom;
-     private String prenom;
-     private LocalDate date_naissance;
-     private ArrayList<String> num_telephone;
+
+	private final String nom;
+     private final String prenom;
+     private final String fonction;
+     private final LocalDate date_naissance;
+     private final ArrayList<Numero_telephone> num_telephone;
      
      public static class Builder{
-    	 private String nom;
-         private String prenom;
+    	 private final String nom;
+         private final String prenom;
+         private String fonction;
          private LocalDate date_naissance=null;
-         private ArrayList<String> num_telephone=null;
+         private ArrayList<Numero_telephone> num_telephone=null;
         
          public Builder(String nom,String prenom) {
         	 this.nom=nom;
         	 this.prenom=prenom;
+         }
+         
+         public Builder fonction(String fonction) {
+        	 this.fonction=fonction;
+        	 return this;
          }
          
          public Builder Date_naissance(LocalDate date_naissance) {
@@ -26,10 +33,44 @@ public class Personne1 {
         	 return this;
          }
          
-         public builder Num_telephone(ArrayList<String> num_telephone) {
-        	  this.num_telephone=new 
+         public Builder Num_telephone(Numero_telephone num_telephone) {
+        	  this.num_telephone = new ArrayList<Numero_telephone>();
+              this.num_telephone.add(num_telephone);
         	  return this;
          }
-       
+       public Personne1 build() {
+    	   return new Personne1(this);
+       }
      }
+     private Personne1(Builder builder) {
+ 		nom=builder.nom;
+ 		prenom=builder.prenom;
+ 		fonction=builder.fonction;
+ 		num_telephone=builder.num_telephone;
+ 		date_naissance = builder.date_naissance;
+ 	}
+     
+     public String getNom() {
+ 		return nom;
+ 	}
+
+ 	
+ 	public String getPrenom() {
+ 		return prenom;
+ 	}
+
+
+ 	public String getFonction() {
+ 		return fonction;
+ 	}
+
+
+ 	public LocalDate getDate_naissance() {
+ 		return date_naissance;
+ 	}
+
+ 	
+ 	public ArrayList<Numero_telephone> getNumero_telephone() {
+ 		return num_telephone;
+ 	}
 }
