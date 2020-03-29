@@ -3,7 +3,7 @@ package pglp_4.annr;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Personne1 {
+public class Personne1 implements Composite{
 
 	private final String nom;
      private final String prenom;
@@ -74,7 +74,7 @@ public class Personne1 {
  		return num_telephone;
  	}
  	
- 	public void Affiche() {
+ 	public void print() {
 		System.out.println(this.nom + " " + this.prenom + ": \nfonction: " 
 		+ this.fonction + "\ndate de naissance: "+this.date_naissance + "\n");	
 	}
