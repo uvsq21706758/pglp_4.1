@@ -18,9 +18,12 @@ public class Personne1 implements Composite{
          private LocalDate date_naissance=null;
          private ArrayList<Numero_telephone> num_telephone=null;
         
-         public Builder(String nom,String prenom) {
+         public Builder(String nom,String prenom, String fonction, LocalDate date_naissance) {
         	 this.nom=nom;
         	 this.prenom=prenom;
+        	 this.fonction = fonction;
+ 			 this.num_telephone= new ArrayList<Numero_telephone>();
+ 			 this.date_naissance= date_naissance;
          }
          
          public Builder fonction(String fonction) {

@@ -2,7 +2,7 @@ package pglp_4.annr;
 
 import java.util.ArrayList;
 
-public class Groupe {
+public class Groupe implements Composite{
 
 	private ArrayList<Composite> personnes = new ArrayList<Composite>();
 	
