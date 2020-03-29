@@ -73,4 +73,9 @@ public class Personne1 {
  	public ArrayList<Numero_telephone> getNumero_telephone() {
  		return num_telephone;
  	}
+ 	
+ 	public void Affiche() {
+		System.out.println(this.nom + " " + this.prenom + ": \nfonction: " 
+		+ this.fonction + "\ndate de naissance: "+this.date_naissance + "\n");	
+	}
 }
