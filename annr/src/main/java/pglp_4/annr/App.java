@@ -36,9 +36,9 @@ public void run(final String[] args) {
 	builder_4.Num_telephone(portable_4);
 	Personne1 manager =  builder_4.build();
 	
-	Groupe Departement = new Groupe();
-	Groupe Service = new Groupe();
-	Groupe Equipe = new Groupe();
+	Groupe Departement = new Groupe("departement");
+	Groupe Service = new Groupe("Service");
+	Groupe Equipe = new Groupe("Equipe");
 	
 
 	Equipe.add(employee);
@@ -52,6 +52,8 @@ public void run(final String[] args) {
 	Departement.add(Service);
 	
 	Departement.print();
+	//Departement.hierarchique();
+
 }
 
 
