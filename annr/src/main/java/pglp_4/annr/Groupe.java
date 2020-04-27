@@ -7,6 +7,9 @@ public class Groupe implements Composite{
 
 	private ArrayList<Composite> personnes = new ArrayList<Composite>();
 	
+	public ArrayList<Composite> getPersonnes() {
+		return personnes;
+	}
 	private String nom;
     
     public Groupe(final String nom) {
